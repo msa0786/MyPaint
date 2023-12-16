@@ -18,9 +18,6 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Accept Android SDK Licenses
-      run: echo "y" | sdkmanager --licenses
-
     - name: Install Aidl
       run: |
         sudo apt-get update
