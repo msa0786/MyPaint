@@ -18,6 +18,14 @@ jobs:
       with:
         python-version: 3.8
 
+    - name: Accept Android SDK Licenses
+      run: echo "y" | sdkmanager --licenses
+
+    - name: Install Aidl
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y aidl
+
     - name: Install Dependencies
       run: |
         pip install cython
@@ -27,4 +35,3 @@ jobs:
 
     - name: Build APK
       run: buildozer -v android debug
-
