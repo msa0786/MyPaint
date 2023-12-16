@@ -20,7 +20,11 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        pip install cython
         pip install buildozer
+        mv buildozer.spec buildozer.spec.backup
+        buildozer init
 
     - name: Build APK
       run: buildozer -v android debug
+
